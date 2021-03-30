@@ -193,7 +193,7 @@ pub mod test {
     async fn should_be_running() {
         let lock = Arc::new(Mutex::new(true));
         let lock_clone = lock.clone();
-        let (mut tx, mut rx) = channel(10000);
+        let (tx, mut rx) = channel(10000);
         let tx_clone = tx.clone();
 
         let job_scheduler = Arc::new(JobScheduler::new(
@@ -203,7 +203,7 @@ pub mod test {
             },
             Job::new("g", "n", None, move || {
                 let lock_clone = lock_clone.clone();
-                let mut tx_clone = tx_clone.clone();
+                let tx_clone = tx_clone.clone();
                 Box::pin(async move {
                     println!("job - started");
                     tx_clone.send("").await.unwrap();

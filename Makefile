@@ -1,5 +1,12 @@
 TARGET_DIR = target
 
+.PHONY: all
+all: build
+
+.PHONY: build
+build:
+	cargo build
+
 
 .PHONY: check
 check:

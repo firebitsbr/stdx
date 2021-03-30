@@ -252,12 +252,12 @@ pub mod test {
                 &Duration::new(0, 1),
                 Job::new("g", "n", None, move || {
                     let count_clone = count_clone.clone();
-                    let mut tx = tx.clone();
+                    let tx = tx.clone();
                     Box::pin(async move {
                         tx.send("").await.unwrap();
                         println!("job - started");
                         count_clone.fetch_add(1, Ordering::SeqCst);
-                        tokio::time::delay_for(Duration::new(1, 0)).await;
+                        tokio::time::sleep(Duration::new(1, 0)).await;
                         Ok(())
                     })
                 }),
@@ -268,7 +268,7 @@ pub mod test {
         for i in 0..100 {
             println!("run_pending {}", i);
             executor.executor.run_pending_jobs().await;
-            tokio::time::delay_for(Duration::new(0, 2)).await;
+            tokio::time::sleep(Duration::new(0, 2)).await;
         }
 
         println!("run_pending completed");
@@ -291,12 +291,12 @@ pub mod test {
                 &[&Duration::new(0, 1)],
                 Job::new("g", "n", None, move || {
                     let count_1_clone = count_1_clone.clone();
-                    let mut tx_1 = tx_1.clone();
+                    let tx_1 = tx_1.clone();
                     Box::pin(async move {
                         tx_1.send("").await.unwrap();
                         println!("job 1 - started");
                         count_1_clone.fetch_add(1, Ordering::SeqCst);
-                        tokio::time::delay_for(Duration::new(1, 0)).await;
+                        tokio::time::sleep(Duration::new(1, 0)).await;
                         Ok(())
                     })
                 }),
@@ -312,12 +312,12 @@ pub mod test {
                 &Duration::new(0, 1),
                 Job::new("g", "n", None, move || {
                     let count_2_clone = count_2_clone.clone();
-                    let mut tx_2 = tx_2.clone();
+                    let tx_2 = tx_2.clone();
                     Box::pin(async move {
                         tx_2.send("").await.unwrap();
                         println!("job 2 - started");
                         count_2_clone.fetch_add(1, Ordering::SeqCst);
-                        tokio::time::delay_for(Duration::new(1, 0)).await;
+                        tokio::time::sleep(Duration::new(1, 0)).await;
                         Ok(())
                     })
                 }),
@@ -333,12 +333,12 @@ pub mod test {
                 &Duration::new(0, 1),
                 Job::new("g", "n", None, move || {
                     let count_3_clone = count_3_clone.clone();
-                    let mut tx_3 = tx_3.clone();
+                    let tx_3 = tx_3.clone();
                     Box::pin(async move {
                         tx_3.send("").await.unwrap();
                         println!("job 3 - started");
                         count_3_clone.fetch_add(1, Ordering::SeqCst);
-                        tokio::time::delay_for(Duration::new(1, 0)).await;
+                        tokio::time::sleep(Duration::new(1, 0)).await;
                         Ok(())
                     })
                 }),
@@ -350,7 +350,7 @@ pub mod test {
         for i in 0..100 {
             println!("run_pending {}", i);
             executor.executor.run_pending_jobs().await;
-            tokio::time::delay_for(Duration::new(0, 1_000_000)).await;
+            tokio::time::sleep(Duration::new(0, 1_000_000)).await;
         }
         let after_millis = Utc::now().timestamp_millis();
 
@@ -380,7 +380,7 @@ pub mod test {
                     Job::new("g", "n", None, move || {
                         let count_clone = count_clone.clone();
                         Box::pin(async move {
-                            tokio::time::delay_for(Duration::new(1, 0)).await;
+                            tokio::time::sleep(Duration::new(1, 0)).await;
                             println!("job - started");
                             count_clone.fetch_add(1, Ordering::SeqCst);
                             Ok(())
@@ -399,7 +399,7 @@ pub mod test {
             if executor.executor.is_running_job().await {
                 break;
             }
-            tokio::time::delay_for(Duration::from_nanos(1)).await;
+            tokio::time::sleep(Duration::from_nanos(1)).await;
         }
 
         executor.stop(true).await.unwrap();
@@ -468,7 +468,7 @@ pub mod test {
                 &[&Duration::new(0, 1)],
                 Job::new("g", "n", None, move || {
                     let count_1_clone = count_1_clone.clone();
-                    let mut tx_1 = tx_1.clone();
+                    let tx_1 = tx_1.clone();
                     Box::pin(async move {
                         tx_1.send("").await.unwrap();
                         println!("job 1 - started");
@@ -488,7 +488,7 @@ pub mod test {
                 &Duration::new(0, 1),
                 Job::new("g", "n", None, move || {
                     let count_2_clone = count_2_clone.clone();
-                    let mut tx_2 = tx_2.clone();
+                    let tx_2 = tx_2.clone();
                     Box::pin(async move {
                         tx_2.send("").await.unwrap();
                         println!("job 2 - started");
@@ -505,7 +505,7 @@ pub mod test {
         for i in 0..runs {
             println!("run_pending {}", i);
             executor.executor.run_pending_jobs().await;
-            tokio::time::delay_for(Duration::new(0, 1_000_000)).await;
+            tokio::time::sleep(Duration::new(0, 1_000_000)).await;
         }
 
         rx.recv().await.unwrap();
