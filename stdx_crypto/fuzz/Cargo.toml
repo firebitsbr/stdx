@@ -1,0 +1,23 @@
+
+[package]
+name = "stdx_crypto_fuzz"
+version = "0.1.0"
+edition = "2018"
+authors = ["z0mbie42 <sylvain@kerkour.fr>"]
+publish = false
+license = "Apache-2.0"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+stdx_crypto = { path = ".." }
+libfuzzer-sys = { git = "https://github.com/rust-fuzz/libfuzzer-sys.git" }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "hash_blake2b"
+path = "fuzz_targets/hash_blake2b.rs"

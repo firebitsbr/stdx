@@ -1,0 +1,33 @@
+[package]
+name = "stdx_crypto"
+version = "0.1.0"
+description = """cross-platform, secure, easy to use, and hard to misuse cryptographic library in Rust,
+ using libsodium as backend"""
+authors = ["z0mbie42 <sylvain@kerkour.fr>"]
+edition = "2018"
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/skerkour/libs/stdx.git"
+categories = ["cryptography"]
+keywords = ["crypto", "cryptography", "rand", "ECC", "XChaCha20", "XChaCha20Poly1305"]
+
+[lib]
+name = "stdx_crypto"
+crate-type = ["lib", "staticlib", "cdylib"]
+
+[dependencies]
+libc = { version = "0.2", default-features = false }
+libsodium_sys = { version = "0.2.5", path = "crates/libsodium_sys", package = "stdx_crypto_libsodium_sys" }
+zeroize_derive = { version = "0.10", path = "crates/zeroize_derive", optional = true }
+bytes = { version = "0.4", optional = true }
+
+
+[dev-dependencies]
+hex = "0.3"
+
+[features]
+benchmarks = []
+std = []
+zeroize_bytes = ["bytes"]
+default = ["std"]
+use_pkg_config = ["libsodium_sys/use_pkg_config"]

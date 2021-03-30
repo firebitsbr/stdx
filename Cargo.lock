@@ -177,6 +177,16 @@ checksum = "14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610"
 
 [[package]]
 name = "bytes"
+version = "0.4.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "206fdffcfa2df7cbe15601ef46c813fce0965eb3286db6b56c583b814b51c81c"
+dependencies = [
+ "byteorder",
+ "iovec",
+]
+
+[[package]]
+name = "bytes"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b700ce4376041dcd0a327fd0097c41095743c4c8af8887265942faf1100bd040"
@@ -317,28 +327,6 @@ checksum = "4857fd85a0c34b3c3297875b747c1e02e06b6a0ea32dd892d8192b9ce0813ea6"
 dependencies = [
  "generic-array",
  "subtle",
-]
-
-[[package]]
-name = "crypto42"
-version = "0.5.7"
-source = "git+https://github.com/skerkour/crypto42-rs#158c7d07e4351229a564a66321fcf9c9710c3399"
-dependencies = [
- "crypto42_libsodium_sys",
- "libc",
-]
-
-[[package]]
-name = "crypto42_libsodium_sys"
-version = "0.2.5"
-source = "git+https://github.com/skerkour/crypto42-rs#158c7d07e4351229a564a66321fcf9c9710c3399"
-dependencies = [
- "cc",
- "libc",
- "libflate",
- "pkg-config",
- "tar",
- "vcpkg",
 ]
 
 [[package]]
@@ -615,7 +603,7 @@ version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc018e188373e2777d0ef2467ebff62a08e66c3f5857b23c8fbec3018210dc00"
 dependencies = [
- "bytes",
+ "bytes 1.0.1",
  "fnv",
  "futures-core",
  "futures-sink",
@@ -666,6 +654,12 @@ dependencies = [
 
 [[package]]
 name = "hex"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "805026a5d0141ffc30abb3be3173848ad46a1b1664fe632428479619a3644d77"
+
+[[package]]
+name = "hex"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
@@ -700,7 +694,7 @@ version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7245cd7449cc792608c3c8a9eaf69bd4eabbabf802713748fd739c98b82f0747"
 dependencies = [
- "bytes",
+ "bytes 1.0.1",
  "fnv",
  "itoa",
 ]
@@ -711,7 +705,7 @@ version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5dfb77c123b4e2f72a2069aeae0b4b4949cc7e966df277813fc16347e7549737"
 dependencies = [
- "bytes",
+ "bytes 1.0.1",
  "http",
  "pin-project-lite",
 ]
@@ -740,7 +734,7 @@ version = "0.14.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8bf09f61b52cfcf4c00de50df88ae423d6c02354e385a86341133b5338630ad1"
 dependencies = [
- "bytes",
+ "bytes 1.0.1",
  "futures-channel",
  "futures-core",
  "futures-util",
@@ -780,7 +774,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "82566a1ace7f56f604d83b7b2c259c78e243d99c565f23d7b4ae34466442c5a2"
 dependencies = [
  "base64",
- "bytes",
+ "bytes 1.0.1",
  "http",
  "httparse",
  "httpdate",
@@ -837,6 +831,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61124eeebbd69b8190558df225adf7e4caafce0d743919e5d6b19652314ec5ec"
 dependencies = [
  "cfg-if",
+]
+
+[[package]]
+name = "iovec"
+version = "0.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b2b3ea6ff95e175473f8ffe6a7eb7c00d054240321b84c57051175fe3c1e075e"
+dependencies = [
+ "libc",
 ]
 
 [[package]]
@@ -1516,7 +1519,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bf12057f289428dbf5c591c74bf10392e4a8003f993405a902f20117019022d4"
 dependencies = [
  "base64",
- "bytes",
+ "bytes 1.0.1",
  "encoding_rs",
  "futures-core",
  "futures-util",
@@ -1795,7 +1798,7 @@ dependencies = [
  "base64",
  "bitflags",
  "byteorder",
- "bytes",
+ "bytes 1.0.1",
  "chrono",
  "crc",
  "crossbeam-channel",
@@ -1806,7 +1809,7 @@ dependencies = [
  "futures-core",
  "futures-util",
  "hashlink",
- "hex",
+ "hex 0.4.3",
  "hmac",
  "ipnetwork",
  "itoa",
@@ -1943,12 +1946,11 @@ dependencies = [
  "byteorder",
  "chrono",
  "cron",
- "crypto42",
  "csv",
  "dotenv",
  "env_logger",
  "futures",
- "hex",
+ "hex 0.4.3",
  "image",
  "lazy_static",
  "lettre",
@@ -1962,11 +1964,35 @@ dependencies = [
  "serde",
  "serde_qs",
  "sqlx",
+ "stdx_crypto",
  "thiserror",
  "tokio",
  "tryhard",
  "url",
  "uuid",
+]
+
+[[package]]
+name = "stdx_crypto"
+version = "0.1.0"
+dependencies = [
+ "bytes 0.4.12",
+ "hex 0.3.2",
+ "libc",
+ "stdx_crypto_libsodium_sys",
+ "zeroize_derive",
+]
+
+[[package]]
+name = "stdx_crypto_libsodium_sys"
+version = "0.2.5"
+dependencies = [
+ "cc",
+ "libc",
+ "libflate",
+ "pkg-config",
+ "tar",
+ "vcpkg",
 ]
 
 [[package]]
@@ -2018,6 +2044,18 @@ checksum = "6498a9efc342871f91cc2d0d694c674368b4ceb40f62b65a7a08c3792935e702"
 dependencies = [
  "proc-macro2",
  "quote",
+ "unicode-xid",
+]
+
+[[package]]
+name = "synstructure"
+version = "0.12.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b834f2d66f734cb897113e34aaff2f1ab4719ca946f9a7358dba8f8064148701"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
  "unicode-xid",
 ]
 
@@ -2165,7 +2203,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "134af885d758d645f0f0505c9a8b3f9bf8a348fd822e112ab5248138348f1722"
 dependencies = [
  "autocfg",
- "bytes",
+ "bytes 1.0.1",
  "libc",
  "memchr",
  "mio",
@@ -2217,7 +2255,7 @@ version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5143d049e85af7fbc36f5454d990e62c2df705b3589f123b71f441b6b59f443f"
 dependencies = [
- "bytes",
+ "bytes 1.0.1",
  "futures-core",
  "futures-sink",
  "log",
@@ -2571,4 +2609,14 @@ dependencies = [
  "mac",
  "markup5ever",
  "time 0.1.43",
+]
+
+[[package]]
+name = "zeroize_derive"
+version = "0.10.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+ "synstructure",
 ]

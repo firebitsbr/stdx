@@ -1,4 +1,4 @@
-use crypto42::{aead::xchacha20poly1305_ietf, hash::blake2b, kdf::argon2id};
+use stdx_crypto::{aead::xchacha20poly1305_ietf, hash::blake2b, kdf::argon2id};
 
 #[derive(thiserror::Error, Debug, Clone, Copy)]
 pub enum Error {

@@ -10,3 +10,4 @@ The missing pieces of Rust's standard library.
 * `qrcode` is a fork of https://github.com/kennytm/qrcode-rust commit faa4397ba7c5f441cb9a2b436c1e84a0d52ae942
 * `base32` is a fork of https://github.com/andreasots/base32 commit a4f77d5243cc737cbc4fa9716f0e25761867fcfa
 * `vat` is a fork of https://github.com/Keats/vat commit 13ac158aefeb8e7e609e01209191587a975d99b3
+* `stdx_crypto` is a fork of https://github.com/skerkour/crypto42-rs commit 158c7d07e4351229a564a66321fcf9c9710c3399 which is based on https://github.com/sodiumoxide/sodiumoxide
