@@ -14,7 +14,7 @@ askama_escape = "0.10"
 base64 = "0.13"
 byteorder = "1.4"
 chrono = { version  = "0.4", features = ["serde"] }
-cron = "0.7"
+cron = "0.9"
 crypto42 = { git = "https://github.com/skerkour/crypto42-rs" }
 csv = "1"
 dotenv = "0.15"
@@ -23,19 +23,19 @@ futures = "0.3"
 hex = "0.4"
 image = "0.23"
 lazy_static = "1.4"
-lettre = { version = "0.10.0-alpha.4", default-features = false, features = ["builder"] }
+lettre = { version = "0.10.0-beta.3", default-features = false, features = ["builder"] }
 log = "0.4"
 num_cpus = "1"
 pulldown-cmark = "0.8"
 rand = { version = "0.8" }
 regex = "1"
-reqwest = { version = "0.10", default-features = false, features = ["json", "rustls-tls"] }
+reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
 ring = "0.16"
 serde = { version = "1", features = ["derive"] }
 serde_qs = "0.8"
-sqlx = { version = "0.4", features = [ "runtime-actix-rustls", "uuid", "json", "postgres", "migrate", "chrono", "time", "ipnetwork" ] }
+sqlx = { version = "0.5", features = [ "runtime-tokio-rustls", "uuid", "json", "postgres", "migrate", "chrono", "time", "ipnetwork" ] }
 thiserror = "1"
-tokio = { version = "0.2", features = ["full"] }
-tryhard = { version = "0.2", default-features = false, features = ["tokio-02"] }
+tokio = { version = "1", features = ["full"] }
+tryhard = "0.3"
 uuid = { version = "0.8", features = ["serde", "v4"] }
 url = "2"
