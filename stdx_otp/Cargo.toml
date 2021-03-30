@@ -1,0 +1,21 @@
+[package]
+name = "stdx_otp"
+version = "0.1.0"
+authors = ["Sylvain Kerkour <sylvain@kerkour.fr>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+stdx_qrcode = { version = "0.1", path = "../stdx_qrcode" }
+stdx_crypto = { version = "0.1", path = "../stdx_crypto" }
+stdx_base32 = { version = "0.1", path = "../stdx_base32" }
+stdx_threadpool = { version = "0.1", path = "../stdx_threadpool" }
+
+chrono = { version  = "0.4", features = ["serde"] }
+image = "0.23"
+thiserror = "1"
+ring = "0.16"
+rand = "0.8"
+byteorder = "1.4"
+tokio = { version = "1", features = ["full"] }

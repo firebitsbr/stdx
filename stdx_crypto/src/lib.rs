@@ -86,4 +86,5 @@ pub mod rand;
 pub mod sign;
 pub mod streaming_aead;
 pub mod utils;
+pub mod utils_stdx;
 pub mod zeroize;

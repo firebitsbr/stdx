@@ -1943,7 +1943,6 @@ dependencies = [
  "askama_escape",
  "atomic",
  "base64",
- "byteorder",
  "chrono",
  "cron",
  "csv",
@@ -1960,13 +1959,15 @@ dependencies = [
  "rand 0.8.3",
  "regex",
  "reqwest",
- "ring",
  "serde",
  "serde_qs",
  "sqlx",
+ "stdx_base32",
  "stdx_crypto",
+ "stdx_otp",
  "stdx_qrcode",
  "stdx_taxes",
+ "stdx_threadpool",
  "stdx_ulid",
  "thiserror",
  "tokio",
@@ -1974,6 +1975,10 @@ dependencies = [
  "url",
  "uuid",
 ]
+
+[[package]]
+name = "stdx_base32"
+version = "0.1.0"
 
 [[package]]
 name = "stdx_crypto"
@@ -1999,6 +2004,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "stdx_otp"
+version = "0.1.0"
+dependencies = [
+ "byteorder",
+ "chrono",
+ "image",
+ "rand 0.8.3",
+ "ring",
+ "stdx_base32",
+ "stdx_crypto",
+ "stdx_qrcode",
+ "stdx_threadpool",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
 name = "stdx_qrcode"
 version = "0.1.0"
 dependencies = [
@@ -2012,6 +2034,14 @@ dependencies = [
  "lazy_static",
  "regex",
  "reqwest",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "stdx_threadpool"
+version = "0.1.0"
+dependencies = [
  "thiserror",
  "tokio",
 ]

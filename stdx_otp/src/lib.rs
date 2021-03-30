@@ -1,5 +1,5 @@
-use crate::qrcode::QrCode;
 use image::{imageops::FilterType, DynamicImage, Luma};
+use stdx_qrcode::QrCode;
 
 pub mod totp;
 
@@ -15,8 +15,8 @@ pub enum Error {
     JoinError,
 }
 
-impl std::convert::From<crate::sync::threadpool::Error> for Error {
-    fn from(err: crate::sync::threadpool::Error) -> Self {
+impl std::convert::From<stdx_threadpool::Error> for Error {
+    fn from(err: stdx_threadpool::Error) -> Self {
         match err {
             _ => Error::JoinError,
         }

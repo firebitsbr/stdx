@@ -1,11 +1,12 @@
 use super::Error;
-use crate::crypto;
-use crate::{base32, sync::threadpool::spawn_blocking};
 use byteorder::{BigEndian, ReadBytesExt};
 use chrono::Utc;
 use rand::{thread_rng, Rng};
 use ring::hmac;
 use std::io::Cursor;
+use stdx_base32 as base32;
+use stdx_crypto as crypto;
+use stdx_threadpool::spawn_blocking;
 
 const DIGITS: usize = 6;
 const SECRET_SIZE: usize = 20; // 20 bytes: sha1 size
@@ -41,7 +42,7 @@ pub async fn validate(code: String, secret: String) -> Result<bool, Error> {
 
         for time_slice in start_time..end_time {
             let valid_code = generate_code(&secret, time_slice);
-            if crypto::constant_time_compare(code.as_bytes(), valid_code.as_bytes()) {
+            if crypto::utils_stdx::constant_time_compare(code.as_bytes(), valid_code.as_bytes()) {
                 return Ok(true);
             }
         }

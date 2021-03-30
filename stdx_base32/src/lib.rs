@@ -1,6 +1,5 @@
-#[cfg(test)]
-extern crate rand;
-
+// #[cfg(test)]
+// extern crate rand;
 use std::cmp::min;
 
 #[derive(Copy, Clone)]

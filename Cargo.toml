@@ -1,7 +1,11 @@
 [workspace]
 members = [
   "stdx",
+  "stdx_base32",
   "stdx_crypto",
+  "stdx_otp",
+  "stdx_qrcode",
   "stdx_taxes",
+  "stdx_threadpool",
   "stdx_ulid",
 ]
