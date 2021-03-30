@@ -14,12 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # The nightly pinning is because otherwise rustfmt is not always present
+      # https://rust-lang.github.io/rustup-components-history/
       - name: Update local toolchain
         run: |
           rustup update
           rustup component add clippy
-          rustup install nightly
-          rustup component add rustfmt --toolchain nightly
+          rustup install nightly-2021-03-25
+          rustup component add rustfmt --toolchain nightly-2021-03-25
 
 
       - name: Toolchain info
