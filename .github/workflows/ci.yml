@@ -30,9 +30,9 @@ jobs:
           rustc --version
           cargo clippy --version
 
-      - name: Lint
-        run: |
-          make lint
+      # - name: Lint
+      #   run: |
+      #     make lint
 
       - name: Test
         # make test
