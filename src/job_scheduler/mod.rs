@@ -189,7 +189,7 @@ impl JobExecutor {
                 debug!("stdx/job_scheduler: Starting the job executor");
                 while executor.is_running() {
                     executor.run_pending_jobs().await;
-                    tokio::time::delay_for(executor.sleep_between_checks.load(Ordering::SeqCst)).await;
+                    tokio::time::sleep(executor.sleep_between_checks.load(Ordering::SeqCst)).await;
                 }
                 debug!("stdx/job_scheduler: Job executor stopped");
             }))
@@ -209,7 +209,7 @@ impl JobExecutor {
             if grateful {
                 debug!("stdx/job_scheduler: Wait for all Jobs to complete");
                 while self.executor.is_running_job().await {
-                    tokio::time::delay_for(self.executor.sleep_between_checks.load(Ordering::SeqCst)).await;
+                    tokio::time::sleep(self.executor.sleep_between_checks.load(Ordering::SeqCst)).await;
                 }
                 debug!("stdx/job_scheduler: All Jobs completed");
             }
