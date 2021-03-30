@@ -1965,6 +1965,7 @@ dependencies = [
  "serde_qs",
  "sqlx",
  "stdx_crypto",
+ "stdx_qrcode",
  "thiserror",
  "tokio",
  "tryhard",
@@ -1993,6 +1994,13 @@ dependencies = [
  "pkg-config",
  "tar",
  "vcpkg",
+]
+
+[[package]]
+name = "stdx_qrcode"
+version = "0.1.0"
+dependencies = [
+ "image",
 ]
 
 [[package]]

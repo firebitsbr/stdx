@@ -2,7 +2,7 @@
 
 use std::ops::Deref;
 
-use crate::qrcode::types::{EcLevel, QrResult, Version};
+use crate::types::{EcLevel, QrResult, Version};
 
 //------------------------------------------------------------------------------
 //{{{ Error correction primitive
@@ -41,7 +41,7 @@ pub fn create_error_correction_code(data: &[u8], ec_code_size: usize) -> Vec<u8>
 
 #[cfg(test)]
 mod ec_tests {
-    use crate::qrcode::ec::create_error_correction_code;
+    use crate::ec::create_error_correction_code;
 
     #[test]
     fn test_poly_mod_1() {
@@ -135,8 +135,8 @@ pub fn construct_codewords(rawbits: &[u8], version: Version, ec_level: EcLevel) 
 
 #[cfg(test)]
 mod construct_codewords_test {
-    use crate::qrcode::ec::construct_codewords;
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::ec::construct_codewords;
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_add_ec_simple() {
@@ -178,8 +178,8 @@ mod construct_codewords_test {
 ///  `ec_level` for the given version (e.g. `Version::Micro(1)` with
 /// `EcLevel::H`).
 pub fn max_allowed_errors(version: Version, ec_level: EcLevel) -> QrResult<usize> {
-    use crate::qrcode::EcLevel::{L, M};
-    use crate::qrcode::Version::{Micro, Normal};
+    use crate::EcLevel::{L, M};
+    use crate::Version::{Micro, Normal};
 
     let p = match (version, ec_level) {
         (Micro(2), L) | (Normal(1), L) => 3,
@@ -197,8 +197,8 @@ pub fn max_allowed_errors(version: Version, ec_level: EcLevel) -> QrResult<usize
 
 #[cfg(test)]
 mod max_allowed_errors_test {
-    use crate::qrcode::ec::max_allowed_errors;
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::ec::max_allowed_errors;
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_low_versions() {

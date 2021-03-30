@@ -11,8 +11,8 @@
 
 use std::cmp::max;
 
-use crate::qrcode::cast::As;
-use crate::qrcode::types::{Color, EcLevel, Version};
+use crate::cast::As;
+use crate::types::{Color, EcLevel, Version};
 
 //------------------------------------------------------------------------------
 //{{{ Modules
@@ -149,8 +149,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod basic_canvas_tests {
-    use crate::qrcode::canvas::{Canvas, Module};
-    use crate::qrcode::types::{Color, EcLevel, Version};
+    use crate::canvas::{Canvas, Module};
+    use crate::types::{Color, EcLevel, Version};
 
     #[test]
     fn test_index() {
@@ -258,8 +258,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod finder_pattern_tests {
-    use crate::qrcode::canvas::Canvas;
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::canvas::Canvas;
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_qr() {
@@ -360,8 +360,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod alignment_pattern_tests {
-    use crate::qrcode::canvas::Canvas;
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::canvas::Canvas;
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_draw_alignment_patterns_1() {
@@ -581,8 +581,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod timing_pattern_tests {
-    use crate::qrcode::canvas::Canvas;
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::canvas::Canvas;
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_draw_timing_patterns_qr() {
@@ -692,8 +692,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod draw_version_info_tests {
-    use crate::qrcode::canvas::Canvas;
-    use crate::qrcode::types::{Color, EcLevel, Version};
+    use crate::canvas::Canvas;
+    use crate::types::{Color, EcLevel, Version};
 
     #[test]
     fn test_draw_number() {
@@ -1026,8 +1026,8 @@ pub fn is_functional(version: Version, width: i16, x: i16, y: i16) -> bool {
 
 #[cfg(test)]
 mod all_functional_patterns_tests {
-    use crate::qrcode::canvas::{is_functional, Canvas};
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::canvas::{is_functional, Canvas};
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_all_functional_patterns_qr() {
@@ -1201,8 +1201,8 @@ impl Iterator for DataModuleIter {
 #[cfg(test)]
 #[rustfmt::skip] // skip to prevent file becoming too long.
 mod data_iter_tests {
-    use crate::qrcode::canvas::DataModuleIter;
-    use crate::qrcode::types::Version;
+    use crate::canvas::DataModuleIter;
+    use crate::types::Version;
 
     #[test]
     fn test_qr() {
@@ -1410,8 +1410,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod draw_codewords_test {
-    use crate::qrcode::canvas::Canvas;
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::canvas::Canvas;
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_micro_qr_1() {
@@ -1603,8 +1603,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod mask_tests {
-    use crate::qrcode::canvas::{Canvas, MaskPattern};
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::canvas::{Canvas, MaskPattern};
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_apply_mask_qr() {
@@ -1855,8 +1855,8 @@ impl Canvas {
 
 #[cfg(test)]
 mod penalty_tests {
-    use crate::qrcode::canvas::{Canvas, MaskPattern};
-    use crate::qrcode::types::{Color, EcLevel, Version};
+    use crate::canvas::{Canvas, MaskPattern};
+    use crate::types::{Color, EcLevel, Version};
 
     fn create_test_canvas() -> Canvas {
         let mut c = Canvas::new(Version::Normal(1), EcLevel::Q);

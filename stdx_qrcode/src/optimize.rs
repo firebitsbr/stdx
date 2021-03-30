@@ -173,8 +173,8 @@ impl<'a> Iterator for Parser<'a> {
 
 #[cfg(test)]
 mod parse_tests {
-    use crate::qrcode::optimize::{Parser, Segment};
-    use crate::qrcode::types::Mode;
+    use crate::optimize::{Parser, Segment};
+    use crate::types::Mode;
 
     fn parse(data: &[u8]) -> Vec<Segment> {
         Parser::new(data).collect()
@@ -464,8 +464,8 @@ pub fn total_encoded_len(segments: &[Segment], version: Version) -> usize {
 
 #[cfg(test)]
 mod optimize_tests {
-    use crate::qrcode::optimize::{total_encoded_len, Optimizer, Segment};
-    use crate::qrcode::types::{Mode, Version};
+    use crate::optimize::{total_encoded_len, Optimizer, Segment};
+    use crate::types::{Mode, Version};
 
     fn test_optimization_result(given: Vec<Segment>, expected: Vec<Segment>, version: Version) {
         let prev_len = total_encoded_len(&*given, version);

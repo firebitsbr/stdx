@@ -5,9 +5,9 @@ use std::cmp::min;
 #[cfg(feature = "bench")]
 extern crate test;
 
-use crate::qrcode::cast::{As, Truncate};
-use crate::qrcode::optimize::{total_encoded_len, Optimizer, Parser, Segment};
-use crate::qrcode::types::{EcLevel, Mode, QrError, QrResult, Version};
+use crate::cast::{As, Truncate};
+use crate::optimize::{total_encoded_len, Optimizer, Parser, Segment};
+use crate::types::{EcLevel, Mode, QrError, QrResult, Version};
 
 //------------------------------------------------------------------------------
 //{{{ Bits
@@ -288,8 +288,8 @@ impl Bits {
 
 #[cfg(test)]
 mod eci_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{QrError, Version};
+    use crate::bits::Bits;
+    use crate::types::{QrError, Version};
 
     #[test]
     fn test_9() {
@@ -361,8 +361,8 @@ impl Bits {
 
 #[cfg(test)]
 mod numeric_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{QrError, Version};
+    use crate::bits::Bits;
+    use crate::types::{QrError, Version};
 
     #[test]
     fn test_iso_18004_2006_example_1() {
@@ -476,8 +476,8 @@ impl Bits {
 
 #[cfg(test)]
 mod alphanumeric_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{QrError, Version};
+    use crate::bits::Bits;
+    use crate::types::{QrError, Version};
 
     #[test]
     fn test_iso_18004_2006_example() {
@@ -530,8 +530,8 @@ impl Bits {
 
 #[cfg(test)]
 mod byte_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{QrError, Version};
+    use crate::bits::Bits;
+    use crate::types::{QrError, Version};
 
     #[test]
     fn test() {
@@ -597,8 +597,8 @@ impl Bits {
 
 #[cfg(test)]
 mod kanji_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{QrError, Version};
+    use crate::bits::Bits;
+    use crate::types::{QrError, Version};
 
     #[test]
     fn test_iso_18004_example() {
@@ -787,8 +787,8 @@ impl Bits {
 
 #[cfg(test)]
 mod finish_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{EcLevel, QrError, Version};
+    use crate::bits::Bits;
+    use crate::types::{EcLevel, QrError, Version};
 
     #[test]
     fn test_hello_world() {
@@ -886,8 +886,8 @@ impl Bits {
 
 #[cfg(test)]
 mod encode_tests {
-    use crate::qrcode::bits::Bits;
-    use crate::qrcode::types::{EcLevel, QrError, QrResult, Version};
+    use crate::bits::Bits;
+    use crate::types::{EcLevel, QrError, QrResult, Version};
 
     fn encode(data: &[u8], version: Version, ec_level: EcLevel) -> QrResult<Vec<u8>> {
         let mut bits = Bits::new(version);
@@ -984,8 +984,8 @@ fn find_min_version(length: usize, ec_level: EcLevel) -> Version {
 
 #[cfg(test)]
 mod encode_auto_tests {
-    use crate::qrcode::bits::{encode_auto, find_min_version};
-    use crate::qrcode::types::{EcLevel, Version};
+    use crate::bits::{encode_auto, find_min_version};
+    use crate::types::{EcLevel, Version};
 
     #[test]
     fn test_find_min_version() {

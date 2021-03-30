@@ -15,7 +15,6 @@ base64 = "0.13"
 byteorder = "1.4"
 chrono = { version  = "0.4", features = ["serde"] }
 cron = "0.9"
-stdx_crypto = { version = "0.1", path = "../stdx_crypto" }
 csv = "1"
 dotenv = "0.15"
 env_logger = "0.8"
@@ -34,6 +33,9 @@ ring = "0.16"
 serde = { version = "1", features = ["derive"] }
 serde_qs = "0.8"
 sqlx = { version = "0.5", features = [ "runtime-tokio-rustls", "uuid", "json", "postgres", "migrate", "chrono", "time", "ipnetwork" ] }
+stdx_crypto = { version = "0.1", path = "../stdx_crypto" }
+stdx_qrcode = { version = "0.1", path = "../stdx_qrcode" }
+
 thiserror = "1"
 tokio = { version = "1", features = ["full"] }
 tryhard = "0.3"

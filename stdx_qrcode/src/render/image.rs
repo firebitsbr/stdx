@@ -1,5 +1,5 @@
-use crate::qrcode::render::{Canvas, Pixel};
-use crate::qrcode::types::Color;
+use crate::render::{Canvas, Pixel};
+use crate::types::Color;
 
 use image::{ImageBuffer, Luma, LumaA, Pixel as ImagePixel, Primitive, Rgb, Rgba};
 
@@ -42,8 +42,8 @@ impl<P: ImagePixel + 'static> Canvas for (P, ImageBuffer<P, Vec<P::Subpixel>>) {
 
 #[cfg(test)]
 mod render_tests {
-    use crate::qrcode::render::Renderer;
-    use crate::qrcode::types::Color;
+    use crate::render::Renderer;
+    use crate::types::Color;
     use image::{Luma, Rgba};
 
     #[test]

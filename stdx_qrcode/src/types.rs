@@ -1,4 +1,4 @@
-use crate::qrcode::cast::As;
+use crate::cast::As;
 use std::cmp::{Ordering, PartialOrd};
 use std::default::Default;
 use std::fmt::{Display, Error, Formatter};
@@ -303,7 +303,7 @@ impl PartialOrd for Mode {
 
 #[cfg(test)]
 mod mode_tests {
-    use crate::qrcode::types::Mode::{Alphanumeric, Byte, Kanji, Numeric};
+    use crate::types::Mode::{Alphanumeric, Byte, Kanji, Numeric};
 
     #[test]
     fn test_mode_order() {
