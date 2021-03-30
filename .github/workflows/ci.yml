@@ -28,11 +28,9 @@ jobs:
 
       - name: Lint
         run: |
-          cd bloom
           make lint
 
       - name: Test
         # make test
         run: |
-          cd bloom
           make check
