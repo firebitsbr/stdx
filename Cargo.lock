@@ -1966,6 +1966,7 @@ dependencies = [
  "sqlx",
  "stdx_crypto",
  "stdx_qrcode",
+ "stdx_taxes",
  "stdx_ulid",
  "thiserror",
  "tokio",
@@ -2002,6 +2003,17 @@ name = "stdx_qrcode"
 version = "0.1.0"
 dependencies = [
  "image",
+]
+
+[[package]]
+name = "stdx_taxes"
+version = "0.1.0"
+dependencies = [
+ "lazy_static",
+ "regex",
+ "reqwest",
+ "thiserror",
+ "tokio",
 ]
 
 [[package]]

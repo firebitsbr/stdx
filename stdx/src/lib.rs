@@ -3,7 +3,6 @@
 pub mod base32;
 pub mod crypto;
 pub mod encoding;
-pub mod finance;
 pub mod html;
 pub mod job_scheduler;
 pub mod mail;
@@ -14,7 +13,6 @@ pub mod stripe;
 pub mod sync;
 pub mod uuid;
 pub mod validator;
-pub mod vat;
 
 pub use base64;
 pub use byteorder;
@@ -31,6 +29,7 @@ pub use regex;
 pub use reqwest;
 pub use sqlx;
 pub use stdx_qrcode as qrcode;
+pub use stdx_taxes as taxes;
 pub use stdx_ulid as ulid;
 pub use tokio;
 pub use tryhard as retry;
