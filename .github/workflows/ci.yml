@@ -9,7 +9,7 @@ on:
       - 'feature-**'
 
 jobs:
-  test:
+  test and build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,3 +38,6 @@ jobs:
         # make test
         run: |
           make check
+
+      - name: Build
+        run: make build
