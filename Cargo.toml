@@ -2,4 +2,5 @@
 members = [
   "stdx",
   "stdx_crypto",
+  "stdx_ulid",
 ]

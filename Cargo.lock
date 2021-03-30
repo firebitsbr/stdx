@@ -1966,6 +1966,7 @@ dependencies = [
  "sqlx",
  "stdx_crypto",
  "stdx_qrcode",
+ "stdx_ulid",
  "thiserror",
  "tokio",
  "tryhard",
@@ -2001,6 +2002,17 @@ name = "stdx_qrcode"
 version = "0.1.0"
 dependencies = [
  "image",
+]
+
+[[package]]
+name = "stdx_ulid"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "lazy_static",
+ "rand 0.8.3",
+ "serde",
+ "uuid",
 ]
 
 [[package]]
