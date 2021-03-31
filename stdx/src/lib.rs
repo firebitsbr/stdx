@@ -1,6 +1,5 @@
 //! The missing pieces of Rust's standard library
 
-pub mod encoding;
 pub mod html;
 pub mod job_scheduler;
 pub mod mail;
@@ -33,3 +32,8 @@ pub use stdx_validator as validator;
 pub use tokio;
 pub use tryhard as retry;
 pub use url;
+
+pub mod encoding {
+    pub use base64;
+    pub use hex;
+}
