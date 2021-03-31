@@ -4,6 +4,11 @@ use crate::{aead::xchacha20poly1305_ietf, hash::blake2b, kdf::argon2id};
 pub const AEAD_KEY_SIZE: usize = 32;
 pub const KEY_SIZE_512: usize = 64;
 
+pub fn init() -> Result<(), Error> {
+    crypto42::init().map_err(|_| Error::Unknown)?;
+    Ok(())
+}
+
 pub fn hash_password(password: &str) -> Result<String, Error> {
     let hash_str = argon2id::hash_password(
         password.as_bytes(),
