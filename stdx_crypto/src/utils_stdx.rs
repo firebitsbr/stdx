@@ -5,7 +5,7 @@ pub const AEAD_KEY_SIZE: usize = 32;
 pub const KEY_SIZE_512: usize = 64;
 
 pub fn init() -> Result<(), Error> {
-    crypto42::init().map_err(|_| Error::Unknown)?;
+    crate::init().map_err(|_| Error::Unknown)?;
     Ok(())
 }
 
