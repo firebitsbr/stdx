@@ -1,6 +1,5 @@
 //! The missing pieces of Rust's standard library
 
-pub mod crypto;
 pub mod encoding;
 pub mod html;
 pub mod job_scheduler;
@@ -23,6 +22,7 @@ pub use regex;
 pub use reqwest;
 pub use sqlx;
 pub use stdx_base32 as base32;
+pub use stdx_crypto as crypto;
 pub use stdx_otp as otp;
 pub use stdx_qrcode as qrcode;
 pub use stdx_stripe as stripe;
