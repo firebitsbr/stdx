@@ -1960,12 +1960,12 @@ dependencies = [
  "regex",
  "reqwest",
  "serde",
- "serde_qs",
  "sqlx",
  "stdx_base32",
  "stdx_crypto",
  "stdx_otp",
  "stdx_qrcode",
+ "stdx_stripe",
  "stdx_taxes",
  "stdx_threadpool",
  "stdx_ulid",
@@ -2025,6 +2025,16 @@ name = "stdx_qrcode"
 version = "0.1.0"
 dependencies = [
  "image",
+]
+
+[[package]]
+name = "stdx_stripe"
+version = "0.1.0"
+dependencies = [
+ "reqwest",
+ "serde",
+ "serde_qs",
+ "thiserror",
 ]
 
 [[package]]

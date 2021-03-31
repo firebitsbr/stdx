@@ -7,7 +7,6 @@ pub mod job_scheduler;
 pub mod mail;
 pub mod markdown;
 pub mod rand;
-pub mod stripe;
 pub mod uuid;
 pub mod validator;
 
@@ -27,6 +26,7 @@ pub use sqlx;
 pub use stdx_base32 as base32;
 pub use stdx_otp as otp;
 pub use stdx_qrcode as qrcode;
+pub use stdx_stripe as stripe;
 pub use stdx_taxes as taxes;
 pub use stdx_threadpool as threadpool;
 pub use stdx_ulid as ulid;
