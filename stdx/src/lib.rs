@@ -8,7 +8,6 @@ pub mod mail;
 pub mod markdown;
 pub mod rand;
 pub mod uuid;
-pub mod validator;
 
 pub use base64;
 pub use chrono;
@@ -30,6 +29,7 @@ pub use stdx_stripe as stripe;
 pub use stdx_taxes as taxes;
 pub use stdx_threadpool as threadpool;
 pub use stdx_ulid as ulid;
+pub use stdx_validator as validator;
 pub use tokio;
 pub use tryhard as retry;
 pub use url;

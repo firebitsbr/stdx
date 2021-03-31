@@ -9,4 +9,5 @@ members = [
   "stdx_taxes",
   "stdx_threadpool",
   "stdx_ulid",
+  "stdx_validator",
 ]

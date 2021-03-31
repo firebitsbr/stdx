@@ -16,6 +16,7 @@ stdx_stripe = { version = "0.1", path = "../stdx_stripe" }
 stdx_taxes = { version = "0.1", path = "../stdx_taxes" }
 stdx_ulid = { version = "0.1", path = "../stdx_ulid" }
 stdx_threadpool = { version = "0.1", path = "../stdx_threadpool" }
+stdx_validator = { version = "0.1", path = "../stdx_validator" }
 
 ammonia = "3"
 atomic = "0.5"

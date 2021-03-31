@@ -1969,6 +1969,7 @@ dependencies = [
  "stdx_taxes",
  "stdx_threadpool",
  "stdx_ulid",
+ "stdx_validator",
  "thiserror",
  "tokio",
  "tryhard",
@@ -2065,6 +2066,14 @@ dependencies = [
  "rand 0.8.3",
  "serde",
  "uuid",
+]
+
+[[package]]
+name = "stdx_validator"
+version = "0.1.0"
+dependencies = [
+ "lazy_static",
+ "regex",
 ]
 
 [[package]]
