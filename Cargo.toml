@@ -5,6 +5,7 @@ members = [
   "stdx_crypto",
   "stdx_otp",
   "stdx_qrcode",
+  "stdx_saas",
   "stdx_stripe",
   "stdx_taxes",
   "stdx_threadpool",

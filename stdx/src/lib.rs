@@ -24,6 +24,7 @@ pub use stdx_base32 as base32;
 pub use stdx_crypto as crypto;
 pub use stdx_otp as otp;
 pub use stdx_qrcode as qrcode;
+pub use stdx_saas as saas;
 pub use stdx_stripe as stripe;
 pub use stdx_taxes as taxes;
 pub use stdx_threadpool as threadpool;

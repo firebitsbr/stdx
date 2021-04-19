@@ -2038,6 +2038,7 @@ dependencies = [
  "stdx_crypto",
  "stdx_otp",
  "stdx_qrcode",
+ "stdx_saas",
  "stdx_stripe",
  "stdx_taxes",
  "stdx_threadpool",
@@ -2100,6 +2101,10 @@ version = "0.1.0"
 dependencies = [
  "image",
 ]
+
+[[package]]
+name = "stdx_saas"
+version = "0.1.0"
 
 [[package]]
 name = "stdx_stripe"

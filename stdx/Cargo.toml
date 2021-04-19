@@ -12,6 +12,7 @@ stdx_base32 = { version = "0.1", path = "../stdx_base32" }
 stdx_crypto = { version = "0.1", path = "../stdx_crypto" }
 stdx_otp = { version = "0.1", path = "../stdx_otp" }
 stdx_qrcode = { version = "0.1", path = "../stdx_qrcode" }
+stdx_saas = { version = "0.1", path = "../stdx_saas" }
 stdx_stripe = { version = "0.1", path = "../stdx_stripe" }
 stdx_taxes = { version = "0.1", path = "../stdx_taxes" }
 stdx_ulid = { version = "0.1", path = "../stdx_ulid" }
