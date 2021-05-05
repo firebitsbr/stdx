@@ -1,4 +1,4 @@
-use lettre::message::header::ContentType;
+use lettre::message::header;
 use lettre::Message;
 use serde::{Deserialize, Serialize};
 use std::{fmt, str::FromStr};
@@ -95,7 +95,7 @@ pub struct Email {
 impl Email {
     pub fn bytes(&self) -> Result<Vec<u8>, Error> {
         let mut builder = Message::builder()
-            .header(ContentType::html())
+            .header(header::ContentType::TEXT_HTML)
             .from(self.from.to_string().parse()?)
             .to(self.to.to_string().parse()?)
             .subject(&self.subject);

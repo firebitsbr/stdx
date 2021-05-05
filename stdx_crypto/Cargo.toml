@@ -19,11 +19,11 @@ crate-type = ["lib", "staticlib", "cdylib"]
 libc = { version = "0.2", default-features = false }
 libsodium_sys = { version = "0.2.5", path = "crates/libsodium_sys", package = "stdx_crypto_libsodium_sys" }
 zeroize_derive = { version = "0.10", path = "crates/zeroize_derive", optional = true }
-bytes = { version = "0.4", optional = true }
+bytes = { version = "1", optional = true }
 
 
 [dev-dependencies]
-hex = "0.3"
+hex = "0.4"
 
 [features]
 benchmarks = []
